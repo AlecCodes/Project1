@@ -1,25 +1,26 @@
-# The Name of My App
+# Mars Weather App
 
-a description of my project
+The Curiosity Rover Environmental Monitoring Station (REMS) is one of the main sources of meterological information on Mars. My app will display Temperature information for each sol (martian day) alongside more information like weather, pressure, and radiation level.
 
 ### Technologies Used
 
-- tech
-- tech 2
-- tech 3
-- tech 4
+- jQuery
+- HTML
+- CSS
+- AJAX
+- JavaScript
 
 ### Wireframes
 
-![SOme text](https://i.ytimg.com/vi/mRf3-JkwqfU/mqdefault.jpg)
+![test](http://imgur.com/a/UTG5AHr.jpg)
 
 ### Daily Plan
 
 | Day | Goal |
 |-----|------|
-| 1 | Choose API |
-| 2 | Render data to screen |
-| 3 | Create form |
+| 1 | Get API approval |
+| 2 | CSS styling |
+| 3 | Add more functionality |
 
 ### Link to Project
-[My Project Live Page](https://www.google.com)
+[My Project Live Page](https://aleccodes.github.io/Project1/)

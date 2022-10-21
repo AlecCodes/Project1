@@ -23,4 +23,4 @@ http://imgur.com/a/UTG5AHr.jpg
 | 3 | Add more functionality |
 
 ### Link to Project
-[My Project Live Page](https://aleccodes.github.io/Project1/)
+[My Project Live Page](https://project1-aleccodes.vercel.app/)

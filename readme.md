@@ -10,9 +10,9 @@ The Curiosity Rover Environmental Monitoring Station (REMS) is one of the main s
 - AJAX
 - JavaScript
 
-### Wireframes
+### Wireframe
 
-![test](http://imgur.com/a/UTG5AHr.jpg)
+http://imgur.com/a/UTG5AHr.jpg
 
 ### Daily Plan
 

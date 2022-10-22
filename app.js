@@ -8,24 +8,31 @@ const curiosity_request = $.ajax(curiosity_url)
 const perserverance_request = $.ajax(perserverance_url)
 
 let sol = 0
+let current_rover = "curiosity"
+
+function render_rover(){
+    if (current_rover === "curiosity"){
+        curiosity_render()
+    } else if (current_rover === "perserverance"){
+        perserverance_render()
+    }
+}
 
 function perserverance_render(){
     perserverance_request.then(data =>{
         flipped_sols = data.sols.reverse()
         p_recentSol = flipped_sols[sol]
-        console.log(flipped_sols)
 
         $p = $('#perserverance')
         $p.html('Max temp: ' + p_recentSol.max_temp)
-        console.log(p_recentSol)
     })
     .catch(error => console.log("Oh no!!", error))
 }
 
-function render(){curiosity_request.then(data =>{
+function curiosity_render(){curiosity_request.then(data =>{
  
         const recentSol = data.soles[sol]
-        const previousSol = data.soles[sol + 1]
+        //const previousSol = data.soles[sol + 1]
  
         //day1
 
@@ -64,18 +71,29 @@ function render(){curiosity_request.then(data =>{
     .catch(error => console.log('Failed Request!!!!! ', error))}
 
 
-render()
+
+
+
+curiosity_render()
 perserverance_render()
+
+$("#c_rover_button").click(function(){
+    current_rover = "curiosity"
+})
+$("#p_rover_button").click(function(){
+    current_rover = "perserverance"
+})
+
 
 $("#scrollback").click(function() {
     sol += 1;
-    render()
+    curiosity_render()
     perserverance_render()
 })
 $('#scrollforward').click(function(){
     if (sol > 0){
         sol -= 1;
-        render()
+        curiosity_render()
         perserverance_render()
     }
 })

@@ -47,18 +47,18 @@ function render(){curiosity_request.then(data =>{
         const $weather = $('#sol1weather')
         $weather.html('Atomsphere opacity: ' + recentSol.atmo_opacity)
 
-        //day2
-        const $date2 = $('#sol2date')
-        $date2.html('Terrestrial date: ' + previousSol.terrestrial_date)
+        // //day2
+        // const $date2 = $('#sol2date')
+        // $date2.html('Terrestrial date: ' + previousSol.terrestrial_date)
 
-        const $max2 = $('#sol2max')
-        $max2.html('Max temp: ' + previousSol.max_temp + ' F°')
+        // const $max2 = $('#sol2max')
+        // $max2.html('Max temp: ' + previousSol.max_temp + ' F°')
         
-        const $min2 = $('#sol2min')
-        $min2.html('Min temp: ' + previousSol.min_temp + ' F°')
+        // const $min2 = $('#sol2min')
+        // $min2.html('Min temp: ' + previousSol.min_temp + ' F°')
 
-        const $weather2 = $('#sol2weather')
-        $weather2.html('Atomsphere opacity: ' + previousSol.atmo_opacity)
+        // const $weather2 = $('#sol2weather')
+        // $weather2.html('Atomsphere opacity: ' + previousSol.atmo_opacity)
 
         })
     .catch(error => console.log('Failed Request!!!!! ', error))}

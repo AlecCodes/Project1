@@ -11,7 +11,7 @@ body {
     grid-template-areas:
         "header header ."
         "rads thing2 ."
-        "sol2 sol1 ."
+        "sol sol ."
 }
 
 #perserverance{
@@ -26,10 +26,7 @@ body {
     grid-area: header;
 }
 
-#sol2{
-    grid-area: sol2;
-}
 
 #sol1{
-    grid-area: sol1;
+    grid-area: sol;
 }

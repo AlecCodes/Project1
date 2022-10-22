@@ -5,10 +5,16 @@ const url = 'https://mars.nasa.gov/rss/api/?feed=weather&category=msl&feedtype=j
 
 const request = $.ajax(url)
 
+let sol = 0
+$("#scrollback").click(function() {
+    console.log(sol += 1);
+    console.log(sol)
+})
+
 request.then(data =>{
     console.log(data)
-    const recentSol = data.soles[0]
-    const previousSol = data.soles[1]
+    const recentSol = data.soles[sol]
+    const previousSol = data.soles[sol+1]
     console.log(recentSol)
     //day1
 

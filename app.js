@@ -8,19 +8,33 @@ const request = $.ajax(url)
 request.then(data =>{
     console.log(data)
     const recentSol = data.soles[0]
+    const previousSol = data.soles[1]
     console.log(recentSol)
-    
-    const $date = $('#date')
+    //day1
+    const $date = $('#sol1date')
     $date.html('Terrestrial date: ' + recentSol.terrestrial_date)
 
-    const $max = $('#max')
+    const $max = $('#sol1max')
     $max.html('Max temp: ' + recentSol.max_temp + ' F°')
     
-    const $min = $('#min')
+    const $min = $('#sol1min')
     $min.html('Min temp: ' + recentSol.min_temp + ' F°')
 
-    const $weather = $('#weather')
+    const $weather = $('#sol1weather')
     $weather.html('Atomsphere opacity: ' + recentSol.atmo_opacity)
+
+    //day2
+    const $date2 = $('#sol2date')
+    $date2.html('Terrestrial date: ' + previousSol.terrestrial_date)
+
+    const $max2 = $('#sol2max')
+    $max2.html('Max temp: ' + previousSol.max_temp + ' F°')
+    
+    const $min2 = $('#sol2min')
+    $min2.html('Min temp: ' + previousSol.min_temp + ' F°')
+
+    const $weather2 = $('#sol2weather')
+    $weather2.html('Atomsphere opacity: ' + previousSol.atmo_opacity)
 
     })
 .catch(error => console.log('Failed Request!!!!! ', error))

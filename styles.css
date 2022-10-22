@@ -1,6 +1,6 @@
 body {
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     height: 100vh;  /*viewport height*/
     display: grid;
     font-family: Arial;
@@ -9,26 +9,18 @@ body {
     grid-template-rows: auto;
     grid-template-areas:
         "header header ."
-        "date weather ."
-        "min max ."
+        "thing1 thing2 ."
+        "sol2 sol1 ."
 }
 
 #h1 {
     grid-area: header;
 }
 
-#date {
-    grid-area: date;
+#sol2{
+    grid-area: sol2;
 }
 
-#max {
-    grid-area: max; 
-}
-
-#min {
-    grid-area: min;
-}
-
-#weather{
-    grid-area: weather;
+#sol1{
+    grid-area: sol1;
 }

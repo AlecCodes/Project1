@@ -2,6 +2,13 @@
 
 The Curiosity Rover Environmental Monitoring Station (REMS) is one of the main sources of meterological information on Mars. My app will display Temperature information for each sol (martian day) alongside more information like weather, pressure, and radiation level.
 
+Curiosity Rover Weather API URL:
+- https://mars.nasa.gov/rss/api/?feed=weather&category=msl&feedtype=json
+
+More info on API:
+- https://ashfull1979.blogspot.com/2021/08/mars-weather-and-how-to-fetch-data.html
+
+
 ### Technologies Used
 
 - jQuery

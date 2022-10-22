@@ -51,3 +51,9 @@ $("#scrollback").click(function() {
     sol += 1;
     render()
 })
+$('#scrollforward').click(function(){
+    if (sol > 0){
+        sol -= 1;
+    }
+    render()
+})

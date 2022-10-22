@@ -16,6 +16,10 @@ function render(){request.then(data =>{
 
         const $rads = $('#rads')
         $rads.html('Radiation level: ' + recentSol.local_uv_irradiance_index)
+        console.log(recentSol.local_uv_irradiance_index)
+        if (recentSol.local_uv_irradiance_index === 'High'){
+            $rads.css('color','red')
+        }
 
         const $date = $('#sol1date')
         $date.html('Terrestrial date: ' + recentSol.terrestrial_date)
@@ -44,6 +48,7 @@ function render(){request.then(data =>{
 
         })
     .catch(error => console.log('Failed Request!!!!! ', error))}
+
 
 render()
 

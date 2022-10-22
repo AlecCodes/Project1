@@ -1,0 +1,34 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;  /*viewport height*/
+    display: grid;
+    font-family: Arial;
+    background-color: rgba(195, 40, 33, 0.84);
+    grid-template-columns: 200px 200px 50px;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "header header ."
+        "date weather ."
+        "min max ."
+}
+
+#h1 {
+    grid-area: header;
+}
+
+#date {
+    grid-area: date;
+}
+
+#max {
+    grid-area: max; 
+}
+
+#min {
+    grid-area: min;
+}
+
+#weather{
+    grid-area: weather;
+}

@@ -1,13 +1,22 @@
 //https://ashfull1979.blogspot.com/2021/08/mars-weather-and-how-to-fetch-data.html
 
 
-const url = 'https://mars.nasa.gov/rss/api/?feed=weather&category=msl&feedtype=json'
+const curiosity_url = 'https://mars.nasa.gov/rss/api/?feed=weather&category=msl&feedtype=json'
+const perserverance_url = "https://mars.nasa.gov/rss/api/?feed=weather&category=mars2020&feedtype=json"
 
-const request = $.ajax(url)
+const curiosity_request = $.ajax(curiosity_url)
+const perserverance_request = $.ajax(perserverance_url)
 
 let sol = 0
 
-function render(){request.then(data =>{
+function perserverance_render(){
+    perserverance_request.then(data =>{
+        console.log(data)
+    })
+    .catch(error => console.log("Oh no!!", error))
+}
+
+function render(){curiosity_request.then(data =>{
         console.log(data)
         const recentSol = data.soles[sol]
         const previousSol = data.soles[sol + 1]
@@ -51,6 +60,7 @@ function render(){request.then(data =>{
 
 
 render()
+perserverance_render()
 
 $("#scrollback").click(function() {
     sol += 1;

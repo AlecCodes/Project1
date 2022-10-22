@@ -10,12 +10,12 @@ body {
     column-gap: 40px;
     grid-template-areas:
         "header header ."
-        "thing1 thing2 ."
+        "rads thing2 ."
         "sol2 sol1 ."
 }
 
 #rads{
-    grid-area: thing1;
+    grid-area: rads;
 }
 
 #h1 {

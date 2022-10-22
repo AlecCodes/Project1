@@ -2,9 +2,11 @@
 
 const curiosity_url = 'https://mars.nasa.gov/rss/api/?feed=weather&category=msl&feedtype=json'
 const perserverance_url = "https://mars.nasa.gov/rss/api/?feed=weather&category=mars2020&feedtype=json"
+const insight_url = "https://mars.nasa.gov/rss/api/?feed=weather&category=insight_temperature&feedtype=json&ver=1.0"
 
 const curiosity_request = $.ajax(curiosity_url)
 const perserverance_request = $.ajax(perserverance_url)
+const insight_request = $.ajax(insight_url)
 
 let sol = 0
 let current_rover = "curiosity"
@@ -18,6 +20,15 @@ function render_rover(){
         perserverance_render()
     }
 }
+
+function insight_render(){
+    insight_request.then(data => {
+        const lastSol = data[data['sol_keys'][6]]
+        console.log(lastSol)
+
+    })
+}
+insight_render()
 
 function perserverance_render(){
     perserverance_request.then(data =>{

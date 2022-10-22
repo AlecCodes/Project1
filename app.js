@@ -24,6 +24,10 @@ function perserverance_render(){
     perserverance_request.then(data =>{
         flipped_sols = data.sols.reverse()
         p_recentSol = flipped_sols[sol]
+        console.log(p_recentSol)
+
+        const $sol1 = $("#sol1")
+        $sol1.append($("<div>").html("Terrestrial date: " + p_recentSol.terrestrial_date))
 
         $p = $('#perserverance')
         $p.html('Max temp: ' + p_recentSol.max_temp)

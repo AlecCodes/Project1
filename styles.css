@@ -14,6 +14,10 @@ body {
         "sol2 sol1 ."
 }
 
+#perserverance{
+    grid-area: thing2;
+}
+
 #rads{
     grid-area: rads;
 }

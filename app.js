@@ -11,21 +11,26 @@ let sol = 0
 
 function perserverance_render(){
     perserverance_request.then(data =>{
-        console.log(data)
+        flipped_sols = data.sols.reverse()
+        p_recentSol = flipped_sols[sol]
+        console.log(flipped_sols)
+
+        $p = $('#perserverance')
+        $p.html('Max temp: ' + p_recentSol.max_temp)
+        console.log(p_recentSol)
     })
     .catch(error => console.log("Oh no!!", error))
 }
 
 function render(){curiosity_request.then(data =>{
-        console.log(data)
+ 
         const recentSol = data.soles[sol]
         const previousSol = data.soles[sol + 1]
-        console.log(recentSol)
+ 
         //day1
 
         const $rads = $('#rads')
         $rads.html('Radiation level: ' + recentSol.local_uv_irradiance_index)
-        console.log(recentSol.local_uv_irradiance_index)
         if (recentSol.local_uv_irradiance_index === 'High'){
             $rads.css('color','red')
         }
@@ -65,10 +70,12 @@ perserverance_render()
 $("#scrollback").click(function() {
     sol += 1;
     render()
+    perserverance_render()
 })
 $('#scrollforward').click(function(){
     if (sol > 0){
         sol -= 1;
+        render()
+        perserverance_render()
     }
-    render()
 })

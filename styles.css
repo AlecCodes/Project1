@@ -1,16 +1,21 @@
 body {
     margin: 0px;
     padding: 0px;
-    height: 100vh;  /*viewport height*/
+    height: 100vh; 
     display: grid;
     font-family: Arial;
     background-color: rgba(195, 40, 33, 0.84);
     grid-template-columns: 200px 200px 50px;
     grid-template-rows: auto;
+    column-gap: 40px;
     grid-template-areas:
         "header header ."
         "thing1 thing2 ."
         "sol2 sol1 ."
+}
+
+#rads{
+    grid-area: thing1;
 }
 
 #h1 {

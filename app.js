@@ -11,6 +11,10 @@ request.then(data =>{
     const previousSol = data.soles[1]
     console.log(recentSol)
     //day1
+
+    const $rads = $('#rads')
+    $rads.html('Radiation level: ' + recentSol.local_uv_irradiance_index)
+
     const $date = $('#sol1date')
     $date.html('Terrestrial date: ' + recentSol.terrestrial_date)
 

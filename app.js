@@ -12,8 +12,10 @@ let current_rover = "curiosity"
 
 function render_rover(){
     if (current_rover === "curiosity"){
+        console.log("curiosity selected")
         curiosity_render()
     } else if (current_rover === "perserverance"){
+        console.log("perserverance selected")
         perserverance_render()
     }
 }
@@ -74,26 +76,26 @@ function curiosity_render(){curiosity_request.then(data =>{
 
 
 
-curiosity_render()
-perserverance_render()
+// curiosity_render()
+// perserverance_render()
 
 $("#c_rover_button").click(function(){
     current_rover = "curiosity"
+    render_rover()
 })
 $("#p_rover_button").click(function(){
     current_rover = "perserverance"
+    render_rover()
 })
 
 
 $("#scrollback").click(function() {
     sol += 1;
-    curiosity_render()
-    perserverance_render()
+    render_rover()
 })
 $('#scrollforward').click(function(){
     if (sol > 0){
         sol -= 1;
-        curiosity_render()
-        perserverance_render()
-    }
+        render_rover()
+        }
 })

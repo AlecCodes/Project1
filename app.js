@@ -25,10 +25,9 @@ function insight_render(){
     insight_request.then(data => {
         const lastSol = data[data['sol_keys'][6]]
         console.log(lastSol)
-
     })
 }
-insight_render()
+
 
 function perserverance_render(){
     perserverance_request.then(data =>{
@@ -101,6 +100,10 @@ function curiosity_render(){curiosity_request.then(data =>{
 
 
 //event listeners
+$("#i_rover_button").click(function(){
+    console.log('clicked')
+})
+
 $("#c_rover_button").click(function(){
     current_rover = "curiosity"
     render_rover()

@@ -18,28 +18,39 @@ function render_rover(){
     } else if (current_rover === "perserverance"){
         //console.log("perserverance selected")
         perserverance_render()
+    } else if (current_rover === "insight"){
+        insight_render()
     }
 }
 
-function insight_render(){
-    insight_request.then(data => {
-        const flipped_sols = data.sol_keys.reverse()
-        console.log(flipped_sols)
-        const i_recentSolKey = flipped_sols[sol]
-        console.log(i_recentSolKey)
+// function insight_render(){
+//     insight_request.then(data => {
+//         console.log(data)
+//         const flipped_sols = data.sol_keys.reverse()
+//         console.log(flipped_sols)
+//         const i_recentSolKey = flipped_sols[sol]
 
-        const i_recentSol = data[i_recentSolKey]
-        console.log(i_recentSol)
-    })
-}
+//         const i_recentSol = data[i_recentSolKey]
+        
+//         const idate = i_recentSol.First_UTC.slice(0,10)
+//         console.log(i_recentSolKey)
+//         console.log(idate)
+
+
+//     })
+// }
 
 
 function perserverance_render(){
     perserverance_request.then(data =>{
-        const flipped_sols = data.sols.reverse() 
-        const p_recentSol = flipped_sols[sol]
-        //console.log(p_recentSol)
+        const sol_list = data.sols
+        // console.log(sol_list)
+        // const flipped_sols = sol_list.reverse()
+        // console.log(flipped_sols) 
+        console.log(sol_list)
+        const p_recentSol = sol_list[sol_list.length-1 - sol]
 
+        
         const $pdate = $("#sol1date")
         $pdate.html("Terrestrial date of last downlink from Perserverance: " + p_recentSol.terrestrial_date)
 
@@ -105,9 +116,10 @@ function curiosity_render(){curiosity_request.then(data =>{
 
 
 //event listeners
-$("#i_rover_button").click(function(){
-    insight_render()    
-})
+// $("#i_rover_button").click(function(){
+//     current_rover = "insight"
+//     render_rover()    
+// })
 
 $("#c_rover_button").click(function(){
     current_rover = "curiosity"

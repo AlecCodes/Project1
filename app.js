@@ -35,9 +35,6 @@ function insight_render(){
         $("#sol1min").html("min: " + i_recentSol.AT.mn +' F°')
         $("#sol1pressure").html("pressure: " + i_recentSol.PRE.av)
 
-        console.log("pressure: ", i_recentSol.PRE.av)
-        console.log("max temp: ", i_recentSol.AT.mx)
-        console.log("min temp: ", i_recentSol.AT.mn)
 
     })
 }
@@ -49,17 +46,13 @@ function perserverance_render(){
         const p_recentSol = sol_list[sol_list.length-1 - sol]
 
         
-        const $pdate = $("#sol1date")
-        $pdate.html("Terrestrial date of last downlink from Perserverance: " + p_recentSol.terrestrial_date)
+        $("#sol1date").html("Terrestrial date of last downlink from Perserverance: " + p_recentSol.terrestrial_date)
 
-        $pmax = $('#sol1max')
-        $pmax.html('Perserverance max temp: ' + p_recentSol.max_temp + ' F°')
+        $('#sol1max').html('Perserverance max temp: ' + p_recentSol.max_temp + ' F°')
 
-        $pmin = $('#sol1min')
-        $pmin.html('Perserverance min temp: ' + p_recentSol.min_temp + ' F°')
+        $('#sol1min').html('Perserverance min temp: ' + p_recentSol.min_temp + ' F°')
 
-        $ppressure = $('#sol1pressure')
-        $ppressure.html('Perserverence atmospheric pressure reading: ' + p_recentSol.pressure)
+        $('#sol1pressure').html('Perserverence atmospheric pressure reading: ' + p_recentSol.pressure)
 
     })
     .catch(error => console.log("Oh no!!", error))
@@ -81,17 +74,13 @@ function curiosity_render(){curiosity_request.then(data =>{
             $rads.css('color','black')
         }
 
-        const $date = $('#sol1date')
-        $date.html('Terrestrial date of last downlink from Curiosity: ' + recentSol.terrestrial_date)
+        $('#sol1date').html('Terrestrial date of last downlink from Curiosity: ' + recentSol.terrestrial_date)
 
-        const $max = $('#sol1max')
-        $max.html('Curiosity Max temp: ' + recentSol.max_temp + ' F°')
+        $('#sol1max').html('Curiosity Max temp: ' + recentSol.max_temp + ' F°')
         
-        const $min = $('#sol1min')
-        $min.html('Curiosity Min temp: ' + recentSol.min_temp + ' F°')
+        $('#sol1min').html('Curiosity Min temp: ' + recentSol.min_temp + ' F°')
 
-        const $pressure = $('#sol1pressure')
-        $pressure.html('Curiosity atomspheric pressure reading: ' + recentSol.pressure)
+        $('#sol1pressure').html('Curiosity atomspheric pressure reading: ' + recentSol.pressure)
 
         // //day2
         // const $date2 = $('#sol2date')

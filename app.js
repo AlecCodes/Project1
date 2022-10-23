@@ -23,31 +23,23 @@ function render_rover(){
     }
 }
 
-// function insight_render(){
-//     insight_request.then(data => {
-//         console.log(data)
-//         const flipped_sols = data.sol_keys.reverse()
-//         console.log(flipped_sols)
-//         const i_recentSolKey = flipped_sols[sol]
+function insight_render(){
+    insight_request.then(data => {
+        const sol_keys = data.sol_keys
+        console.log(sol_keys)
 
-//         const i_recentSol = data[i_recentSolKey]
+        const i_recentSol = data[sol_keys[sol_keys.length - 1 - sol]] //grab the last element, and deincrement by value of sol
         
-//         const idate = i_recentSol.First_UTC.slice(0,10)
-//         console.log(i_recentSolKey)
-//         console.log(idate)
+        const idate = i_recentSol.First_UTC.slice(0,10)
+        console.log(idate)
 
-
-//     })
-// }
+    })
+}
 
 
 function perserverance_render(){
     perserverance_request.then(data =>{
         const sol_list = data.sols
-        // console.log(sol_list)
-        // const flipped_sols = sol_list.reverse()
-        // console.log(flipped_sols) 
-        console.log(sol_list)
         const p_recentSol = sol_list[sol_list.length-1 - sol]
 
         
@@ -116,10 +108,10 @@ function curiosity_render(){curiosity_request.then(data =>{
 
 
 //event listeners
-// $("#i_rover_button").click(function(){
-//     current_rover = "insight"
-//     render_rover()    
-// })
+$("#i_rover_button").click(function(){
+    current_rover = "insight"
+    render_rover()    
+})
 
 $("#c_rover_button").click(function(){
     current_rover = "curiosity"

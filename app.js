@@ -34,8 +34,8 @@ function insight_render(){
         $("#sol1max").html("max: " + i_recentSol.AT.mx + ' F°')
         $("#sol1min").html("min: " + i_recentSol.AT.mn +' F°')
         $("#sol1pressure").html("pressure: " + i_recentSol.PRE.av)
-
-
+        $('h1').html("InSight Lander")
+        $('h2').html("Location: Elysium Planitia")
     })
 }
 
@@ -53,6 +53,8 @@ function perserverance_render(){
         $('#sol1min').html('Perserverance min temp: ' + p_recentSol.min_temp + ' F°')
 
         $('#sol1pressure').html('Perserverence atmospheric pressure reading: ' + p_recentSol.pressure)
+        $('h1').html('Perserverance Rover')
+        $("h2").html('Location: Jezero Crater')
 
     })
     .catch(error => console.log("Oh no!!", error))
@@ -81,6 +83,8 @@ function curiosity_render(){curiosity_request.then(data =>{
         $('#sol1min').html('Curiosity Min temp: ' + recentSol.min_temp + ' F°')
 
         $('#sol1pressure').html('Curiosity atomspheric pressure reading: ' + recentSol.pressure)
+        $('h1').html('Curiosity Rover')
+        $('h2').html('Location: Gale Crater')
 
         // //day2
         // const $date2 = $('#sol2date')

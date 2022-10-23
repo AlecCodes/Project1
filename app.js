@@ -30,8 +30,12 @@ function insight_render(){
 
         const i_recentSol = data[sol_keys[sol_keys.length - 1 - sol]] //grab the last element, and deincrement by value of sol
         
-        const idate = i_recentSol.First_UTC.slice(0,10)
-        console.log(idate)
+        $("#sol1date").html(i_recentSol.First_UTC.slice(0,10))
+
+
+        console.log("pressure: ", i_recentSol.PRE.av)
+        console.log("max temp: ", i_recentSol.AT.mx)
+        console.log("min temp: ", i_recentSol.AT.mn)
 
     })
 }
@@ -101,7 +105,7 @@ function curiosity_render(){curiosity_request.then(data =>{
         // $weather2.html('Atomsphere opacity: ' + previousSol.atmo_opacity)
 
         })
-    .catch(error => console.log('Failed Request!!!!! ', error))}
+.catch(error => console.log('Failed Request!!!!! ', error))}
 
 
 

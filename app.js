@@ -13,27 +13,32 @@ let current_rover = "curiosity"
 
 function render_rover(){
     if (current_rover === "curiosity"){
-        console.log("curiosity selected")
+        //console.log("curiosity selected")
         curiosity_render()
     } else if (current_rover === "perserverance"){
-        console.log("perserverance selected")
+        //console.log("perserverance selected")
         perserverance_render()
     }
 }
 
 function insight_render(){
     insight_request.then(data => {
-        const lastSol = data[data['sol_keys'][6]]
-        console.log(lastSol)
+        const flipped_sols = data.sol_keys.reverse()
+        console.log(flipped_sols)
+        const i_recentSolKey = flipped_sols[sol]
+        console.log(i_recentSolKey)
+
+        const i_recentSol = data[i_recentSolKey]
+        console.log(i_recentSol)
     })
 }
 
 
 function perserverance_render(){
     perserverance_request.then(data =>{
-        flipped_sols = data.sols.reverse()
-        p_recentSol = flipped_sols[sol]
-        console.log(p_recentSol)
+        const flipped_sols = data.sols.reverse() 
+        const p_recentSol = flipped_sols[sol]
+        //console.log(p_recentSol)
 
         const $pdate = $("#sol1date")
         $pdate.html("Terrestrial date of last downlink from Perserverance: " + p_recentSol.terrestrial_date)
@@ -57,7 +62,7 @@ function curiosity_render(){curiosity_request.then(data =>{
         //const previousSol = data.soles[sol + 1]
  
         //day1
-        console.log(recentSol)
+        //console.log(recentSol)
 
         const $rads = $('#rads')
         $rads.html('Radiation level: ' + recentSol.local_uv_irradiance_index)
@@ -101,7 +106,7 @@ function curiosity_render(){curiosity_request.then(data =>{
 
 //event listeners
 $("#i_rover_button").click(function(){
-    console.log('clicked')
+    insight_render()    
 })
 
 $("#c_rover_button").click(function(){

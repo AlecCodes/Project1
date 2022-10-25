@@ -9,6 +9,7 @@ const perserverance_request = $.ajax(perserverance_url)
 const insight_request = $.ajax(insight_url)
 
 let sol = 0
+//add a feature so each button click renders the most recent 
 let current_rover = "curiosity"
 
 function render_rover(){
@@ -26,10 +27,10 @@ function render_rover(){
 function insight_render(){
     insight_request.then(data => {
         const sol_keys = data.sol_keys
-        console.log(sol_keys)
 
         const i_recentSol = data[sol_keys[sol_keys.length - 1 - sol]] //grab the last element, and deincrement by value of sol
-        
+        console.log(i_recentSol)
+
         $("#sol1date").html("Terrestrial date of most recent InSight downlink " + i_recentSol.First_UTC.slice(0,10))
         $("#sol1max").html("max: " + i_recentSol.AT.mx + ' F°')
         $("#sol1min").html("min: " + i_recentSol.AT.mn +' F°')
@@ -44,7 +45,7 @@ function perserverance_render(){
     perserverance_request.then(data =>{
         const sol_list = data.sols
         const p_recentSol = sol_list[sol_list.length-1 - sol]
-
+        console.log(p_recentSol)
         
         $("#sol1date").html("Terrestrial date of last downlink from Perserverance: " + p_recentSol.terrestrial_date)
 
@@ -66,7 +67,7 @@ function curiosity_render(){curiosity_request.then(data =>{
         //const previousSol = data.soles[sol + 1]
  
         //day1
-        //console.log(recentSol)
+        console.log(recentSol)
 
         const $rads = $('#rads')
         $rads.html('Radiation level: ' + recentSol.local_uv_irradiance_index)

@@ -23,6 +23,8 @@ body {
 }
 
 img {
+    height: 100%;
+    width: 100%;
     grid-row-start: 1;
     grid-column-start: 1;
     grid-row-end: 9;

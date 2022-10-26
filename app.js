@@ -14,18 +14,23 @@ let sol = 0
 //add a feature so each button click renders the most recent 
 let current_rover = "curiosity"
 
-function render_reticle(){
+function clear_reticle(){
     $(".reticle").html(`<img src = ${black_reticle_url}>`)
 }
 
 function render_rover(){
     if (current_rover === "curiosity"){
         curiosity_render()
-
+        clear_reticle()
+        $('#C').html(`<img src = ${red_reticle_url}>`)
     } else if (current_rover === "perserverance"){
         perserverance_render()
+        clear_reticle()
+        $('#P').html(`<img src = ${red_reticle_url}>`)
     } else if (current_rover === "insight"){
         insight_render()
+        clear_reticle()
+        $('#I').html(`<img src = ${red_reticle_url}>`)
     }
 }
 

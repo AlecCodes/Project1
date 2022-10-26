@@ -6,6 +6,11 @@ const insight_url = "https://mars.nasa.gov/rss/api/?feed=weather&category=insigh
 const black_reticle_url = "https://cdn3.iconfinder.com/data/icons/maps-and-navigation-solid-2/48/58-512.png"
 const red_reticle_url = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Crosshairs_Red.svg/1024px-Crosshairs_Red.svg.png"
 
+const curiosity_model = '<iframe src="https://mars.nasa.gov/gltf_embed/24584" width="100%" height="450px" frameborder="0" />'
+const insight_model = "<iframe src='https://solarsystem.nasa.gov/gltf_embed/2380' width='100%' height='450px' frameborder='0' />"
+const perserverance_model = "<iframe src='https://solarsystem.nasa.gov/gltf_embed/2380' width='100%' height='450px' frameborder='0' />"
+
+
 const curiosity_request = $.ajax(curiosity_url)
 const perserverance_request = $.ajax(perserverance_url)
 const insight_request = $.ajax(insight_url)

@@ -10,8 +10,14 @@ body {
     column-gap: 40px;
     grid-template-areas:
         "header header ."
-        "buttons map  ."
-        "sol extra ."
+        "buttons map model"
+        "sol extra model"
+}
+
+#model{
+    height: 300px;
+    width: 300px;
+    grid-area: model;
 }
 
 #map_container{
@@ -23,12 +29,10 @@ body {
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
-
 img{
     max-width: 100%;
     max-height: 100%;
     grid-area: 1 / 1 / 9 / 11;
-
 }
 
 .reticle:hover {

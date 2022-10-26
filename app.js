@@ -50,6 +50,12 @@ function insight_render(){
         const i_recentSol = data[sol_keys[sol_keys.length - 1 - sol]] //grab the last element, and deincrement by value of sol
         console.log(i_recentSol)
 
+        $("#extra1").html(`Northern Season: ${i_recentSol.Northern_season}`)
+        $("#extra2").html(`Southern Season: ${i_recentSol.Southern_season}`)
+        $("#extra3").html(`Local Season: ${i_recentSol.Season}`)
+        $("#extra4").empty()
+
+
         $("#sol1date").html("Terrestrial date of most recent InSight downlink " + i_recentSol.First_UTC.slice(0,10))
         $("#sol1max").html("max: " + i_recentSol.AT.mx + ' F°')
         $("#sol1min").html("min: " + i_recentSol.AT.mn +' F°')

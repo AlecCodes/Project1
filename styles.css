@@ -10,11 +10,12 @@ body {
     column-gap: 40px;
     grid-template-areas:
         "header header ."
-        "buttons rads  ."
+        "buttons map  ."
         "sol extra ."
 }
 
 #map_container{
+    grid-area: map;
     height: 500px;
     width: 500px;
     display: grid;
@@ -22,13 +23,25 @@ body {
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
-img {
-    height: 100%;
-    width: 100%;
-    grid-row-start: 1;
-    grid-column-start: 1;
-    grid-row-end: 9;
-    grid-column-end: 11;
+
+img{
+    max-width: 100%;
+    max-height: 100%;
+    grid-area: 1 / 1 / 9 / 11;
+
+}
+
+#C{
+    grid-area: 4/2/5/3;
+    color: aliceblue;
+}
+
+#I{
+    grid-area: 3/2/4/3;
+}
+
+#P{
+    grid-area: 2/9/3/10;
 }
 
 #scrollbuttons{

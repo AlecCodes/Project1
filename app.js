@@ -6,9 +6,9 @@ const insight_url = "https://mars.nasa.gov/rss/api/?feed=weather&category=insigh
 const black_reticle_url = "https://cdn3.iconfinder.com/data/icons/maps-and-navigation-solid-2/48/58-512.png"
 const red_reticle_url = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Crosshairs_Red.svg/1024px-Crosshairs_Red.svg.png"
 
-const curiosity_model = '<iframe src="https://mars.nasa.gov/gltf_embed/24584" width="100%" height="450px" frameborder="0" />'
-const insight_model = "<iframe src='https://solarsystem.nasa.gov/gltf_embed/2380' width='100%' height='450px' frameborder='0' />"
-const perserverance_model = "<iframe src='https://solarsystem.nasa.gov/gltf_embed/2380' width='100%' height='450px' frameborder='0' />"
+const curiosity_model = '<iframe src="https://mars.nasa.gov/gltf_embed/24584" width="100%" height="400px" frameborder="0" />'
+const insight_model = "<iframe src='https://solarsystem.nasa.gov/gltf_embed/2380' width='100%' height='400px' frameborder='0' />"
+const perserverance_model = "<iframe src='https://solarsystem.nasa.gov/gltf_embed/2380' width='100%' height='400px' frameborder='0' />"
 
 
 const curiosity_request = $.ajax(curiosity_url)
@@ -19,6 +19,7 @@ let sol = 0
 //add a feature so each button click renders the most recent 
 let current_rover = "curiosity"
 
+
 function clear_reticle(){
     $(".reticle").html(`<img src = ${black_reticle_url}>`)
 }
@@ -28,10 +29,12 @@ function render_rover(){
         curiosity_render()
         clear_reticle()
         $('#C').html(`<img src = ${red_reticle_url}>`)
+        // $('#model').html(`<img src = ${curiosity_model}>`)
     } else if (current_rover === "perserverance"){
         perserverance_render()
         clear_reticle()
         $('#P').html(`<img src = ${red_reticle_url}>`)
+        // $('#model').html(`<img src = ${perserverance_model}>`)
     } else if (current_rover === "insight"){
         insight_render()
         clear_reticle()

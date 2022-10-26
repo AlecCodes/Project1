@@ -5,13 +5,12 @@ body {
     display: grid;
     font-family: Arial;
     background-color: rgba(195, 40, 33, 0.84);
-    grid-template-columns: 200px 200px 50px;
+    /* grid-template-columns: 200px 200px 50px; */
     grid-template-rows: auto;
-    column-gap: 40px;
     grid-template-areas:
         "header header ."
-        "buttons map model"
-        "sol extra model"
+        "sol map model"
+        "buttons extra model"
 }
 
 #model{

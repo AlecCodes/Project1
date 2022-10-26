@@ -53,12 +53,11 @@ function insight_render(){
         $("#sol1date").html("Terrestrial date of most recent InSight downlink " + i_recentSol.First_UTC.slice(0,10))
         $("#sol1max").html("max: " + i_recentSol.AT.mx + ' F°')
         $("#sol1min").html("min: " + i_recentSol.AT.mn +' F°')
-        $("#sol1pressure").html("pressure: " + i_recentSol.PRE.av)
+        $("#sol1pressure").html(`pressure: ${i_recentSol.PRE.av} Pascals`)
         $('h1').html("InSight Lander")
         $('h2').html("Location: Elysium Planitia")
     })
 }
-
 
 function perserverance_render(){
     perserverance_request.then(data =>{
@@ -72,7 +71,7 @@ function perserverance_render(){
 
         $('#sol1min').html('Perserverance min temp: ' + p_recentSol.min_temp + ' F°')
 
-        $('#sol1pressure').html('Perserverence atmospheric pressure reading: ' + p_recentSol.pressure)
+        $('#sol1pressure').html(`Perserverence atmospheric pressure reading: ${p_recentSol.pressure} Pascals`)
         $('h1').html('Perserverance Rover')
         $("h2").html('Location: Jezero Crater')
 
@@ -88,13 +87,16 @@ function curiosity_render(){curiosity_request.then(data =>{
         //day1
         console.log(recentSol)
 
-        const $rads = $('#rads')
+        $rads = $('#extra1')
         $rads.html('Radiation level: ' + recentSol.local_uv_irradiance_index)
         if (recentSol.local_uv_irradiance_index === 'High'){
             $rads.css('color','red')
         } else {
             $rads.css('color','black')
         }
+        $("#extra2").html("Weather: " + recentSol.atmo_opacity)
+        $("#extra3").html(`Sunrise: ${recentSol.sunrise}`)
+        $("#extra4").html(`Sunset: ${recentSol.sunset}`)
 
         $('#sol1date').html('Terrestrial date of last downlink from Curiosity: ' + recentSol.terrestrial_date)
 
@@ -102,7 +104,7 @@ function curiosity_render(){curiosity_request.then(data =>{
         
         $('#sol1min').html('Curiosity Min temp: ' + recentSol.min_temp + ' F°')
 
-        $('#sol1pressure').html('Curiosity atomspheric pressure reading: ' + recentSol.pressure)
+        $('#sol1pressure').html(`Curiosity atomspheric pressure reading: ${recentSol.pressure} Pascals`)
         $('h1').html('Curiosity Rover')
         $('h2').html('Location: Gale Crater')
 

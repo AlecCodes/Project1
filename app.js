@@ -8,7 +8,7 @@ const red_reticle_url = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/
 
 const curiosity_model = '<iframe src="https://mars.nasa.gov/gltf_embed/24584" width="100%" height="400px" frameborder="0" />'
 const insight_model = "<iframe src='https://solarsystem.nasa.gov/gltf_embed/2380' width='100%' height='400px' frameborder='0' />"
-const perserverance_model = "<iframe src='https://solarsystem.nasa.gov/gltf_embed/2380' width='100%' height='400px' frameborder='0' />"
+const perserverance_model = '<iframe src="https://mars.nasa.gov/gltf_embed/25042" width="100%" height="400px" frameborder="0" />'
 
 
 const curiosity_request = $.ajax(curiosity_url)
@@ -29,16 +29,17 @@ function render_rover(){
         curiosity_render()
         clear_reticle()
         $('#C').html(`<img src = ${red_reticle_url}>`)
-        // $('#model').html(`<img src = ${curiosity_model}>`)
+        $('#model').html(`${curiosity_model}`)
     } else if (current_rover === "perserverance"){
         perserverance_render()
         clear_reticle()
         $('#P').html(`<img src = ${red_reticle_url}>`)
-        // $('#model').html(`<img src = ${perserverance_model}>`)
+        $('#model').html(`${perserverance_model}`)
     } else if (current_rover === "insight"){
         insight_render()
         clear_reticle()
         $('#I').html(`<img src = ${red_reticle_url}>`)
+        $('#model').html(`${insight_model}`)
     }
 }
 

@@ -10,7 +10,7 @@ body {
     grid-template-areas:
         "header header ."
         "sol map model"
-        "buttons extra model"
+        "buttons extra ."
 }
 
 #model{

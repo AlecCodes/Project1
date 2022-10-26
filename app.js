@@ -108,16 +108,16 @@ function curiosity_render(){curiosity_request.then(data =>{
 
 
 //event listeners
-$("#i_rover_button").click(function(){
+$("#I").click(function(){
     current_rover = "insight"
     render_rover()    
 })
 
-$("#c_rover_button").click(function(){
+$("#C").click(function(){
     current_rover = "curiosity"
     render_rover()
 })
-$("#p_rover_button").click(function(){
+$("#P").click(function(){
     current_rover = "perserverance"
     render_rover()
 })

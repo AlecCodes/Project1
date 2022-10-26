@@ -71,12 +71,14 @@ function perserverance_render(){
         const p_recentSol = sol_list[sol_list.length-1 - sol]
         console.log(p_recentSol)
         
+        $("#extra1").html(`Local Season: ${p_recentSol.season}`)
+        $("#extra2").html(`Sunrise: ${p_recentSol.sunrise}`)
+        $("#extra3").html(`Sunset: ${p_recentSol.sunset}`)
+        $("#extra4").empty()
+
         $("#sol1date").html("Terrestrial date of last downlink from Perserverance: " + p_recentSol.terrestrial_date)
-
         $('#sol1max').html('Perserverance max temp: ' + p_recentSol.max_temp + ' F°')
-
         $('#sol1min').html('Perserverance min temp: ' + p_recentSol.min_temp + ' F°')
-
         $('#sol1pressure').html(`Perserverence atmospheric pressure reading: ${p_recentSol.pressure} Pascals`)
         $('h1').html('Perserverance Rover')
         $("h2").html('Location: Jezero Crater')

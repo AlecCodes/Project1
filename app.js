@@ -115,16 +115,22 @@ function curiosity_render(){curiosity_request.then(data =>{
 
 
 //event listeners
-$("#I").click(function(){
+$("#I").click(function(event){
+    sol = 0
+    event.preventDefault()
     current_rover = "insight"
     render_rover()    
 })
 
-$("#C").click(function(){
+$("#C").click(function(event){
+    sol = 0
+    event.preventDefault()
     current_rover = "curiosity"
     render_rover()
 })
-$("#P").click(function(){
+$("#P").click(function(event){
+    sol = 0
+    event.preventDefault()
     current_rover = "perserverance"
     render_rover()
 })

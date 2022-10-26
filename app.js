@@ -3,6 +3,8 @@
 const curiosity_url = 'https://mars.nasa.gov/rss/api/?feed=weather&category=msl&feedtype=json'
 const perserverance_url = "https://mars.nasa.gov/rss/api/?feed=weather&category=mars2020&feedtype=json"
 const insight_url = "https://mars.nasa.gov/rss/api/?feed=weather&category=insight_temperature&feedtype=json&ver=1.0"
+const black_reticle_url = "https://cdn3.iconfinder.com/data/icons/maps-and-navigation-solid-2/48/58-512.png"
+const red_reticle_url = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Crosshairs_Red.svg/1024px-Crosshairs_Red.svg.png"
 
 const curiosity_request = $.ajax(curiosity_url)
 const perserverance_request = $.ajax(perserverance_url)
@@ -12,12 +14,15 @@ let sol = 0
 //add a feature so each button click renders the most recent 
 let current_rover = "curiosity"
 
+function render_reticle(){
+    $(".reticle").html(`<img src = ${black_reticle_url}>`)
+}
+
 function render_rover(){
     if (current_rover === "curiosity"){
-        //console.log("curiosity selected")
         curiosity_render()
+
     } else if (current_rover === "perserverance"){
-        //console.log("perserverance selected")
         perserverance_render()
     } else if (current_rover === "insight"){
         insight_render()
@@ -87,21 +92,9 @@ function curiosity_render(){curiosity_request.then(data =>{
         $('h1').html('Curiosity Rover')
         $('h2').html('Location: Gale Crater')
 
-        // //day2
-        // const $date2 = $('#sol2date')
-        // $date2.html('Terrestrial date: ' + previousSol.terrestrial_date)
-
-        // const $max2 = $('#sol2max')
-        // $max2.html('Max temp: ' + previousSol.max_temp + ' F°')
-        
-        // const $min2 = $('#sol2min')
-        // $min2.html('Min temp: ' + previousSol.min_temp + ' F°')
-
-        // const $weather2 = $('#sol2weather')
-        // $weather2.html('Atomsphere opacity: ' + previousSol.atmo_opacity)
-
         })
-.catch(error => console.log('Failed Request!!!!! ', error))}
+.catch(error => console.log('Failed Request!!!!! ', error))
+}
 
 
 

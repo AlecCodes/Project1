@@ -27,13 +27,18 @@ body {
     text-align: center;
 }
 
-/* translate3d is a css function to move an element around the page. It's three arguments are the x, y, and z coordinate for the 'translation'. For a ticker, we only need to pass a percentage into the x coordinate to move from left to right. */
+/* kerframes is a rule that establishes waypoints at different steps of an animation. In this case, the first 'waypoint' is at 0%, meaning the scrll */
 
 @keyframes ticker{
-    0%{transform: translate3d(-400%,0,0);} 
-    100%{transform: translate3d(100%,0,0);}
+
+    /* translate3d is a css function to move an element around the page. It's three arguments are the x, y, and z coordinate for the 'translation'. For a ticker, we only need to pass a percentage into the x coordinate to move from left to right. This percentage determines starting position of ticker, and depending on the number of lines of text in the ticker, will affect the speed.*/
+
+    0%{transform: translate3d(100%,0,0);} 
+    100%{transform: translate3d(-300%,0,0);}
 }
-.tmove {animation: ticker linear 15s infinite;}
+/* this attched the tmove wrapper to the keyframes, so it knows whose child elements to display on ticker. And 'Animation' accepts an argument which tells it how long animation should take */
+.tmove {animation: ticker linear 9s infinite}
+ /*pauses when hovered upon*/
 .tmove:hover{animation-play-state: paused}
 
 #model{

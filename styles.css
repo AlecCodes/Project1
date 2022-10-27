@@ -12,6 +12,29 @@ body {
         "sol map model"
         "extra map model"
 }
+.twrap {
+    overflow: hidden;
+    background: red;
+}
+.tmove{
+    display: flex;
+}
+.titem{
+    flex-shrink: 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: center;
+}
+
+/* translate3d is a css function to move an element around the page. It's three arguments are the x, y, and z coordinate for the 'translation'. For a ticker, we only need to pass a percentage into the x coordinate to move from left to right. */
+
+@keyframes ticker{
+    0%{transform: translate3d(-400%,0,0);} 
+    100%{transform: translate3d(100%,0,0);}
+}
+.tmove {animation: ticker linear 15s infinite;}
+.tmove:hover{animation-play-state: paused}
 
 #model{
     height: 300px;

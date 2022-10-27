@@ -1,5 +1,7 @@
 body {
-    margin: 0px;
+    margin: 100px;
+    border: 20px;
+    border-style: solid;
     padding: 40px;
     height: 100vh; 
     display: grid;
@@ -8,13 +10,35 @@ body {
     /* grid-template-columns: 200px 200px 50px; */
     grid-template-rows: auto;
     grid-template-areas:
-        "header header ."
+        "header header ticker"
         "sol map model"
         "extra map model"
 }
+
+@media (max-width: 1300px){
+    body {
+        height: 100vh;
+        grid-template-areas:
+            "header header header"
+            "sol map map"
+            /* "sol map map" */
+            "extra ticker ."
+            ". model ."
+    }
+}
+
+@media (max-width: 1100px){
+    body {
+        margin: 0px;
+        border: 0px;
+        padding: 0px
+    }
+}
+
 .twrap {
     overflow: hidden;
     width: 300px;
+    grid-area: ticker;
 }
 .tmove{
     display: flex;
@@ -81,11 +105,15 @@ img{
     grid-area: 2/9/3/10;
 }
 
-
-
-
 #extra{
     grid-area: extra;
+    justify-items: center;
+}
+
+#extracontainer{
+    border-style: solid;
+    border-color: green;
+    width: 200px;
 }
 
 #h1 {

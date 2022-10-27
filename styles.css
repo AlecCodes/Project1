@@ -22,6 +22,7 @@ body {
 .titem{
     /* fit horizontally */
     flex-shrink: 0;
+    color: rgb(53, 201, 53);
     width: 140%;
     box-sizing: border-box;
     padding: 10px;

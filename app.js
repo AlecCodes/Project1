@@ -74,6 +74,8 @@ function perserverance_render(){
         const p_recentSol = sol_list[sol_list.length-1 - sol]
         console.log(p_recentSol)
         
+        $(".titem").html('Data only available for past 7 sols')
+
         $("#extra1").html(`Local Season: ${p_recentSol.season}`)
         $("#extra2").html(`Sunrise: ${p_recentSol.sunrise}`)
         $("#extra3").html(`Sunset: ${p_recentSol.sunset}`)
@@ -94,7 +96,10 @@ function curiosity_render(){curiosity_request.then(data =>{
  
         const recentSol = data.soles[sol]
         //const previousSol = data.soles[sol + 1]
- 
+
+        $('.1').html("Curiosity Rover has descended into Gale Crater.")
+        $('.2').html("Therefore, expect higher pressure readings.")
+
         //day1
         console.log(recentSol)
 

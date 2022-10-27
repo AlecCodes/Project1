@@ -57,9 +57,9 @@ function insight_render(){
 
 
         $("#sol1date").html("Terrestrial date of most recent InSight downlink " + i_recentSol.First_UTC.slice(0,10))
-        $("#sol1max").html("max: " + i_recentSol.AT.mx + ' F°')
-        $("#sol1min").html("min: " + i_recentSol.AT.mn +' F°')
-        $("#sol1pressure").html(`pressure: ${i_recentSol.PRE.av} Pascals`)
+        $("#sol1max").html("Max temp: " + i_recentSol.AT.mx + ' F°')
+        $("#sol1min").html("Min temp: " + i_recentSol.AT.mn +' F°')
+        $("#sol1pressure").html(`Atmospheric pressure: ${i_recentSol.PRE.av} Pascals`)
         $('h1').html("InSight Lander")
         $('h2').html("Location: Elysium Planitia")
     })
@@ -77,9 +77,9 @@ function perserverance_render(){
         $("#extra4").empty()
 
         $("#sol1date").html("Terrestrial date of last downlink from Perserverance: " + p_recentSol.terrestrial_date)
-        $('#sol1max').html('Perserverance max temp: ' + p_recentSol.max_temp + ' F°')
-        $('#sol1min').html('Perserverance min temp: ' + p_recentSol.min_temp + ' F°')
-        $('#sol1pressure').html(`Perserverence atmospheric pressure reading: ${p_recentSol.pressure} Pascals`)
+        $('#sol1max').html('Max temp: ' + p_recentSol.max_temp + ' F°')
+        $('#sol1min').html('Min temp: ' + p_recentSol.min_temp + ' F°')
+        $('#sol1pressure').html(`Atmospheric pressure: ${p_recentSol.pressure} Pascals`)
         $('h1').html('Perserverance Rover')
         $("h2").html('Location: Jezero Crater')
 
@@ -102,17 +102,14 @@ function curiosity_render(){curiosity_request.then(data =>{
         } else {
             $rads.css('color','black')
         }
-        $("#extra2").html("Weather: " + recentSol.atmo_opacity)
+        $("#extra2").html(`Weather: ${recentSol.atmo_opacity}`)
         $("#extra3").html(`Sunrise: ${recentSol.sunrise}`)
         $("#extra4").html(`Sunset: ${recentSol.sunset}`)
 
         $('#sol1date').html('Terrestrial date of last downlink from Curiosity: ' + recentSol.terrestrial_date)
-
-        $('#sol1max').html('Curiosity Max temp: ' + recentSol.max_temp + ' F°')
-        
-        $('#sol1min').html('Curiosity Min temp: ' + recentSol.min_temp + ' F°')
-
-        $('#sol1pressure').html(`Curiosity atomspheric pressure reading: ${recentSol.pressure} Pascals`)
+        $('#sol1max').html(`Max temp: ${recentSol.max_temp}F°`)
+        $('#sol1min').html(`Min temp: ${recentSol.min_temp}F°`)
+        $('#sol1pressure').html(`Atmospheric Pressure: ${recentSol.pressure} Pascals`)
         $('h1').html('Curiosity Rover')
         $('h2').html('Location: Gale Crater')
 

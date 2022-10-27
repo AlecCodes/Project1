@@ -153,8 +153,15 @@ $("#P").click(function(event){
 
 $("#scrollback").click(function() {
     sol += 1;
-    render_rover()
+    console.log('sol is ..' + sol)
+    if (sol === 7 && current_rover === 'perserverance'){
+        alert('Perserverance only has data for past 7 sols')
+        return;
+    }else{
+        render_rover()
+    }
 })
+
 $('#scrollforward').click(function(){
     if (sol > 0){
         sol -= 1;

@@ -1,12 +1,14 @@
 body {
+    color:aliceblue;
     margin: 100px;
     border: 20px;
     border-style: solid;
+    border-color: red;
     padding: 40px;
     height: 100vh; 
     display: grid;
     font-family: Arial;
-    background-color: rgba(195, 40, 33, 0.84);
+    background-color: black;
     /* grid-template-columns: 200px 200px 50px; */
     grid-template-rows: auto;
     grid-template-areas:
@@ -68,7 +70,7 @@ body {
     100%{transform: translate3d(-500%,0,0);}
 }
 /* this attched the tmove wrapper to the keyframes, so it knows whose child elements to display on ticker. And 'Animation' accepts an argument which tells it how long animation should take */
-.tmove {animation: ticker linear 9s infinite}
+.tmove {animation: ticker linear 15s infinite}
  /*pauses when hovered upon*/
 .tmove:hover{animation-play-state: paused}
 
@@ -107,6 +109,9 @@ img{
 }
 
 /* for extra rover info */
+span {
+    text-emphasis-color: red;
+}
 #extra{
     grid-area: extra;
     align-items:baseline;

@@ -108,7 +108,7 @@ function curiosity_render(){curiosity_request.then(data =>{
         if (recentSol.local_uv_irradiance_index === 'High'){
             $rads.css('color','red')
         } else {
-            $rads.css('color','black')
+            $rads.css('color','white')
         }
         $("#extra2").html(`Weather: ${recentSol.atmo_opacity}`)
         $("#extra3").html(`Sunrise: ${recentSol.sunrise}`)

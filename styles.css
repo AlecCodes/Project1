@@ -17,7 +17,7 @@ body {
         "extra map model"
 }
 
-@media (max-width: 1300px){
+@media (max-width: 1500px){
     body {
         height: 100%;
         margin: 50px;
@@ -41,7 +41,8 @@ body {
 
 /* ticker stuff */
 .twrap {
-    height: 41%;
+    align-self:flex-end;
+    height: 20%;
     border-style: solid;
     overflow: hidden;
     width: 300px;
@@ -70,7 +71,7 @@ body {
     100%{transform: translate3d(-500%,0,0);}
 }
 /* this attched the tmove wrapper to the keyframes, so it knows whose child elements to display on ticker. And 'Animation' accepts an argument which tells it how long animation should take */
-.tmove {animation: ticker linear 15s infinite}
+.tmove {animation: ticker linear 16s infinite}
  /*pauses when hovered upon*/
 .tmove:hover{animation-play-state: paused}
 
@@ -123,6 +124,11 @@ span {
 }
 
 /* sol data */
+#scrollbuttons{
+    justify-content:flex-end
+
+}
+
 #sol1{
     grid-area: sol;
     grid-template-columns: 1fr 1fr;

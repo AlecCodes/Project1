@@ -18,6 +18,15 @@ body {
 }
 
 @media (max-width: 1500px){
+    .twrap{
+        transform: translate(0, -40px);
+        height: 50px;
+        position: relative;
+        bottom: 20px;
+    }
+    .tmove{
+        vertical-align: top;
+    }
     body {
         height: 100%;
         margin: 50px;
@@ -41,9 +50,8 @@ body {
 
 /* ticker stuff */
 .twrap {
-    align-self:flex-end;
-    height: 20%;
-    border-style: solid;
+    align-self: flex-end;
+    height: auto;
     overflow: hidden;
     width: 300px;
     grid-area: ticker;
@@ -125,8 +133,7 @@ span {
 
 /* sol data */
 #scrollbuttons{
-    justify-content:flex-end
-
+    justify-self: center;
 }
 
 #sol1{

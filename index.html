@@ -11,7 +11,7 @@
 </head>
 <body>
     <h1>MARS!</h1>
-    <h2>Click a rover!</h2>
+    <div id = "location">Click a rover!</div>
     <div class="twrap"><div class = "tmove">
         <div class="titem 1"></div>
         <div class="titem 2"></div>
@@ -24,19 +24,21 @@
             <button id ='scrollback'>Go back one sol</button>
             <button id = 'scrollforward'>Go forward one sol</button>
         </div>
-        <div id ='sol1date'></div>
-        <div id ='sol1max'></div>
-        <div id ='sol1min'></div>
-        <div id ='sol1pressure'></div>
+        <div id = "solcontainer">
+            <div class = "data" id ='sol1date'></div>
+            <div class = "data" id ='sol1max'></div>
+            <div class = "data" id ='sol1min'></div>
+            <div class = "data" id ='sol1pressure'></div>
+        </div>
     </div>
 
     <div id = 'extra'>
         Additional Weather Information:
         <div id = 'extracontainer'>
-            <div id = "extra1"></div>
-            <div id = "extra2"></div>
-            <div id = "extra3"></div>
-            <div id = "extra4"></div>
+            <div class = "data" id = "extra1"></div>
+            <div class = "data" id = "extra2"></div>
+            <div class = "data" id = "extra3"></div>
+            <div class = "data" id = "extra4"></div>
         </div>
     </div>
 

@@ -10,18 +10,19 @@ body {
     /* grid-template-columns: 200px 200px 50px; */
     grid-template-rows: auto;
     grid-template-areas:
-        "header header ticker"
+        "header location ticker"
         "sol map model"
         "extra map model"
 }
 
 @media (max-width: 1300px){
     body {
-        height: 100vh;
+        height: 100%;
+        margin: 50px;
+        padding: 100px;
         grid-template-areas:
-            "header header header"
+            "header location ."
             "sol map map"
-            /* "sol map map" */
             "extra ticker ."
             ". model ."
     }
@@ -29,13 +30,17 @@ body {
 
 @media (max-width: 1100px){
     body {
+        height: 100%;
         margin: 0px;
         border: 0px;
         padding: 0px
     }
 }
 
+/* ticker stuff */
 .twrap {
+    height: 41%;
+    border-style: solid;
     overflow: hidden;
     width: 300px;
     grid-area: ticker;
@@ -73,6 +78,7 @@ body {
     grid-area: model;
 }
 
+/* map stuff */
 #map_container{
     grid-area: map;
     height: 500px;
@@ -81,46 +87,61 @@ body {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
-
 img{
     max-width: 100%;
     max-height: 100%;
     grid-area: 1 / 1 / 9 / 11;
 }
-
 .reticle:hover {
     cursor:pointer;
 }
-
 #C{
     grid-area: 4/2/5/3;
     color: aliceblue;
 }
-
 #I{
     grid-area: 3/2/4/3;
 }
-
 #P{
     grid-area: 2/9/3/10;
 }
 
+/* for extra rover info */
 #extra{
     grid-area: extra;
-    justify-items: center;
+    align-items:baseline;
 }
-
 #extracontainer{
     border-style: solid;
     border-color: green;
-    width: 200px;
+    /* width: 200px; */
 }
 
-#h1 {
-    grid-area: header;
-}
-
-
+/* sol data */
 #sol1{
     grid-area: sol;
+    grid-template-columns: 1fr 1fr;
+}
+#solcontainer{
+    border-style: solid;
+    border-color: green;
+}
+
+.data{
+    text-align: center;
+    font-size:20px;
+    border-style: solid;
+    border-color: green;
+    border-width: 1px;
+}
+
+h1 {
+    grid-area: header;
+    font-size: 60px; 
+}
+
+#location{
+    grid-area: location;
+    text-align: center;
+    align-self:flex-end
 }

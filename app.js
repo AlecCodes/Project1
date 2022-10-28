@@ -64,7 +64,7 @@ function insight_render(){
         $("#sol1min").html("Min temp: " + i_recentSol.AT.mn +' F°')
         $("#sol1pressure").html(`Atmospheric pressure: ${i_recentSol.PRE.av} Pascals`)
         $('h1').html("InSight Lander")
-        $('h2').html("Location: Elysium Planitia")
+        $('#location').html("Location: Elysium Planitia")
     })
 }
 
@@ -86,7 +86,7 @@ function perserverance_render(){
         $('#sol1min').html('Min temp: ' + p_recentSol.min_temp + ' F°')
         $('#sol1pressure').html(`Atmospheric pressure: ${p_recentSol.pressure} Pascals`)
         $('h1').html('Perserverance Rover')
-        $("h2").html('Location: Jezero Crater')
+        $("#location").html('Location: Jezero Crater')
 
     })
     .catch(error => console.log("Oh no!!", error))
@@ -119,7 +119,7 @@ function curiosity_render(){curiosity_request.then(data =>{
         $('#sol1min').html(`Min temp: ${recentSol.min_temp}F°`)
         $('#sol1pressure').html(`Atmospheric Pressure: ${recentSol.pressure} Pascals`)
         $('h1').html('Curiosity Rover')
-        $('h2').html('Location: Gale Crater')
+        $('#location').html('Location: Gale Crater')
 
         })
 .catch(error => console.log('Failed Request!!!!! ', error))

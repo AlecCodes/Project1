@@ -132,13 +132,10 @@ span {
 }
 
 /* sol data */
-#scrollbuttons{
-    justify-self: center;
-}
+
 
 #sol1{
     grid-area: sol;
-    grid-template-columns: 1fr 1fr;
 }
 #solcontainer{
     border-style: solid;
@@ -156,6 +153,10 @@ span {
 h1 {
     grid-area: header;
     font-size: 60px; 
+}
+
+h2{
+    grid-area: header;
 }
 
 #location{
